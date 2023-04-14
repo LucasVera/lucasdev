@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+.footerText {
+  font-size: 1em;
+  margin: 0;
+}
+
+.solidJsLink {
+  font-size: 1em;
+}
+
+.heartIcon {
+  color: #e25555;
+}

@@ -1,0 +1,54 @@
+.container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  height: 100%;
+  padding-top: 40px;
+}
+
+.headerButtonsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  margin: 0px;
+}
+
+.containerHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  margin-bottom: 75px;
+}
+
+.title {
+  font-size: 2.5em;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.subtitle {
+  font-size: 1.5em;
+  margin: 0;
+}
+
+.paragraph {
+  font-size: 1em;
+  margin: 20px;
+}
+
+.trailBtn {}
+
+.petsBtn {
+  background-color: #318499;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 24px;
+  transition: 0.3s;
+}
