@@ -15,7 +15,7 @@ const Footer: Component = () => {
 
   return (
     <div class={styles.container}>
-      <p class={styles.footerText}>{texts().p1a} <FaSolidHeart color="#e25555" size={10} /> {texts().p1b} <a class={styles.solidJsLink} href="https://www.solidjs.com/" target="_blank" rel="noreferrer">SolidJs</a>. {texts().p1c} GithubLink</p>
+      <p class={styles.footerText}>{texts().p1a} <FaSolidHeart color="#e25555" size={10} /> {texts().p1b} <a class={styles.solidJsLink} href="https://www.solidjs.com/" target="_blank">SolidJs</a>. {texts().p1c} <a class={styles.solidJsLink} href="https://github.com/LucasVera/lucasdev" target="_blank">Github</a></p>
     </div>
   )
 }
