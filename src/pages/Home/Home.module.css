@@ -6,11 +6,15 @@
   justify-content: start;
   height: 100%;
   padding-top: 40px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .headerButtonsContainer {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  flex-basis: 100%;
   align-items: center;
   justify-content: end;
   margin: 0px;
@@ -51,4 +55,18 @@
   border-radius: 5px;
   font-size: 24px;
   transition: 0.3s;
+}
+
+@media (max-width: 512px) {
+  .headerButtonsContainer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .containerHeader {
+    margin-bottom: 0;
+  }
+  .petsBtn {
+    margin: 5px 0;
+  }
 }
