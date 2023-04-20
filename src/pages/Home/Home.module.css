@@ -58,15 +58,16 @@
 }
 
 @media (max-width: 512px) {
-  .headerButtonsContainer {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
   .containerHeader {
     margin-bottom: 0;
   }
   .petsBtn {
     margin: 5px 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .trailBtn {
+    display: none;
   }
 }
