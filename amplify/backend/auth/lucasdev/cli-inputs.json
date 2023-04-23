@@ -1,0 +1,12 @@
+{
+  "version": "1",
+  "cognitoConfig": {
+    "identityPoolName": "lucasdev_identitypool_10041d33",
+    "allowUnauthenticatedIdentities": true,
+    "authSelections": "identityPoolOnly",
+    "resourceName": "lucasdev",
+    "sharedId": "10041d33",
+    "serviceName": "Cognito",
+    "useDefault": "manual"
+  }
+}

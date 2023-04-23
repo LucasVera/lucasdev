@@ -1,5 +1,6 @@
 import { JSXElement, ParentComponent, createContext, useContext } from "solid-js"
 import { createStore } from 'solid-js/store'
+import { LucasDevEvents, recordAnalyticsEvent } from "../util/analytics"
 
 interface LocaleContextValue {
   locale: string
@@ -26,6 +27,7 @@ export const LocaleProvider: ParentComponent<LocaleProviderProps> = (props: Loca
     locale: locale.locale,
     getLocale: () => locale.locale,
     setLocale: (locale: string) => {
+      recordAnalyticsEvent(LucasDevEvents.LANGUAGE_CHANGED, { locale })
       setLocale({ locale })
     },
   }

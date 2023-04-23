@@ -5,6 +5,13 @@ import Pets from './pages/Pets'
 import NotFound from './pages/NotFound'
 import { LocaleProvider } from './context/LocaleContext'
 import Layout from './containers/Layout'
+import { Amplify, Analytics } from 'aws-amplify'
+import awsConfig from './aws-exports'
+
+Amplify.configure(awsConfig)
+Analytics.autoTrack('session', {
+  enable: true,
+})
 
 const App: Component = () => {
   return (

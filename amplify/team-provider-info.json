@@ -17,6 +17,12 @@
           "appId": "daezixkwk6x5m",
           "type": "cicd"
         }
+      },
+      "auth": {
+        "lucasdev": {}
+      },
+      "analytics": {
+        "lucasdev": {}
       }
     }
   }

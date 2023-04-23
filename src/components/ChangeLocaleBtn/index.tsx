@@ -1,4 +1,4 @@
-import { FaSolidGlobe, FaSolidLanguage } from "solid-icons/fa"
+import { FaSolidLanguage } from "solid-icons/fa"
 import { Component } from "solid-js"
 import { useLocale } from "../../context/LocaleContext"
 

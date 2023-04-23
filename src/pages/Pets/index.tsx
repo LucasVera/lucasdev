@@ -1,4 +1,4 @@
-import { Component, createEffect, createSignal } from "solid-js"
+import { Component, createEffect, createSignal, onMount } from "solid-js"
 import { shuffle } from "../../util/array"
 import styles from './Pets.module.css'
 import PetCard from "../../components/PetCard"
@@ -27,6 +27,7 @@ import { FaSolidArrowLeft } from "solid-icons/fa"
 import localeTexts from './Pets.texts'
 import { useLocale } from "../../context/LocaleContext"
 import ChangeLocaleBtn from "../../components/ChangeLocaleBtn"
+import { LucasDevEvents, recordAnalyticsEvent } from "../../util/analytics"
 
 export type Pet = {
   id: number,
@@ -38,6 +39,10 @@ export type Pet = {
 export type PetSpecies = 'dog' | 'cat' | 'multiple cats'
 
 const Pets: Component = () => {
+  onMount(() => {
+    recordAnalyticsEvent(LucasDevEvents.PETS_VIEWED, { page: 'home' })
+  })
+
   const pets: Pet[] = [
     { id: 1, name: 'Gali', image: gali1, species: 'cat' },
     { id: 2, name: 'Gali', image: gali2, species: 'cat' },

@@ -1,6 +1,7 @@
 import { Component, createSignal } from "solid-js"
 import { Pet } from "../../pages/Pets"
 import styles from './PetCard.module.css'
+import { LucasDevEvents, recordAnalyticsEvent } from "../../util/analytics"
 
 export interface PetCardProps {
   pet: Pet,
@@ -16,6 +17,12 @@ const PetCard: Component<PetCardProps> = (props: PetCardProps) => {
     if (props.clicksDisabled()) {
       return
     }
+    recordAnalyticsEvent(LucasDevEvents.PET_PICTURE_CLICKED, {
+      name: props.pet.name,
+      image: props.pet.image,
+      species: props.pet.species,
+      id: props.pet.id.toString(),
+    })
     props.setClicksDisabled(true)
     setFadeEffect({ transform: 'rotate(180deg) scale(0)', transition: 'transform 0.5s ease-in-out' })
     setTimeout(() => {
