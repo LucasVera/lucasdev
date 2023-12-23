@@ -42,12 +42,14 @@ const recordAwsAmplifyEvent = (eventName: LucasDevEvents, attributes: EventAttri
 })
 
 const MIXPANEL_TOKEN = import.meta.env.VITE_MIXPANEL_TOKEN
+const APP_VERSION = import.meta.env.VITE_APP_VERSION
 const recordMixpanelEvent = (eventName: LucasDevEvents, attributes: EventAttributes, metrics?: EventMetrics) => {
   const userUniqueId = getUserAnalyticsUniqueId()
   const now = new Date().valueOf()
   const mixpanelEventProperties = {
-    User_Unique_Id: userUniqueId,
-    Current_Timestamp: now,
+    LD_user_unique_id: userUniqueId,
+    LD_current_timestamp: now,
+    LD_app_version: APP_VERSION,
     token: MIXPANEL_TOKEN,
     ...attributes,
     ...metrics,
