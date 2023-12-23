@@ -9,6 +9,7 @@ import gali3 from '../../assets/images/cat-pics/gali3.jpg'
 import gali4 from '../../assets/images/cat-pics/gali4.jpg'
 import gali5 from '../../assets/images/cat-pics/gali5.jpg'
 import gali6 from '../../assets/images/cat-pics/gali6.jpg'
+import gali7 from '../../assets/images/cat-pics/gali7.jpg'
 import galiCope1 from '../../assets/images/cat-pics/gali-cope1.jpg'
 import galiCope2 from '../../assets/images/cat-pics/gali-cope2.jpg'
 import galiCope3 from '../../assets/images/cat-pics/gali-cope3.jpg'
@@ -18,6 +19,8 @@ import cope3 from '../../assets/images/cat-pics/cope3.jpg'
 import cope4 from '../../assets/images/cat-pics/cope4.jpg'
 import cope5 from '../../assets/images/cat-pics/cope5.jpg'
 import cope6 from '../../assets/images/cat-pics/cope6.jpg'
+import cope7 from '../../assets/images/cat-pics/cope7.jpg'
+import cope8 from '../../assets/images/cat-pics/cope8.jpg'
 import rey1 from '../../assets/images/dog-pics/rey1.png'
 import rey2 from '../../assets/images/dog-pics/rey2.png'
 import rey3 from '../../assets/images/dog-pics/rey3.png'
@@ -44,25 +47,28 @@ const Pets: Component = () => {
   })
 
   const pets: Pet[] = [
-    { id: 1, name: 'Gali', image: gali1, species: 'cat' },
-    { id: 2, name: 'Gali', image: gali2, species: 'cat' },
-    { id: 3, name: 'Gali', image: gali3, species: 'cat' },
-    { id: 4, name: 'Gali', image: gali4, species: 'cat' },
-    { id: 5, name: 'Gali', image: gali5, species: 'cat' },
-    { id: 6, name: 'Gali', image: gali6, species: 'cat' },
-    { id: 7, name: 'Gali+Cope', image: galiCope1, species: 'cat' },
-    { id: 8, name: 'Gali+Cope', image: galiCope2, species: 'cat' },
-    { id: 9, name: 'Gali+Cope', image: galiCope3, species: 'cat' },
-    { id: 10, name: 'Cope', image: cope1, species: 'cat' },
-    { id: 11, name: 'Cope', image: cope2, species: 'cat' },
-    { id: 12, name: 'Cope', image: cope3, species: 'cat' },
-    { id: 13, name: 'Cope', image: cope4, species: 'cat' },
-    { id: 14, name: 'Cope', image: cope5, species: 'cat' },
-    { id: 15, name: 'Cope', image: cope6, species: 'cat' },
-    { id: 16, name: 'Rey', image: rey1, species: 'dog' },
-    { id: 17, name: 'Rey', image: rey2, species: 'dog' },
-    { id: 18, name: 'Rey', image: rey3, species: 'dog' },
-    { id: 19, name: 'Rey', image: rey4, species: 'dog' },
+    { id: 11, name: 'Gali', image: gali1, species: 'cat' },
+    { id: 12, name: 'Gali', image: gali2, species: 'cat' },
+    { id: 13, name: 'Gali', image: gali3, species: 'cat' },
+    { id: 14, name: 'Gali', image: gali4, species: 'cat' },
+    { id: 15, name: 'Gali', image: gali5, species: 'cat' },
+    { id: 16, name: 'Gali', image: gali6, species: 'cat' },
+    { id: 17, name: 'Gali', image: gali7, species: 'cat' },
+    { id: 21, name: 'Gali+Cope', image: galiCope1, species: 'cat' },
+    { id: 22, name: 'Gali+Cope', image: galiCope2, species: 'cat' },
+    { id: 23, name: 'Gali+Cope', image: galiCope3, species: 'cat' },
+    { id: 31, name: 'Cope', image: cope1, species: 'cat' },
+    { id: 32, name: 'Cope', image: cope2, species: 'cat' },
+    { id: 33, name: 'Cope', image: cope3, species: 'cat' },
+    { id: 34, name: 'Cope', image: cope4, species: 'cat' },
+    { id: 35, name: 'Cope', image: cope5, species: 'cat' },
+    { id: 36, name: 'Cope', image: cope6, species: 'cat' },
+    { id: 37, name: 'Cope', image: cope7, species: 'cat' },
+    { id: 38, name: 'Cope', image: cope8, species: 'cat' },
+    { id: 41, name: 'Rey', image: rey1, species: 'dog' },
+    { id: 42, name: 'Rey', image: rey2, species: 'dog' },
+    { id: 43, name: 'Rey', image: rey3, species: 'dog' },
+    { id: 44, name: 'Rey', image: rey4, species: 'dog' },
   ]
   const randomizedPets = shuffle(pets)
 

@@ -7,10 +7,21 @@ import { LocaleProvider } from './context/LocaleContext'
 import Layout from './containers/Layout'
 import { Amplify, Analytics } from 'aws-amplify'
 import awsConfig from './aws-exports'
+import mixpanel from 'mixpanel-browser'
 
-Amplify.configure(awsConfig)
+const MIXPANEL_TOKEN = import.meta.env.VITE_MIXPANEL_TOKEN
+
+Amplify.configure({
+  ...awsConfig,
+})
 Analytics.autoTrack('session', {
-  enable: true,
+  enable: false,
+})
+
+mixpanel.init(MIXPANEL_TOKEN, {
+  debug: true,
+  track_pageview: true,
+  persistence: 'localStorage',
 })
 
 const App: Component = () => {

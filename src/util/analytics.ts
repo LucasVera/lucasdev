@@ -1,4 +1,6 @@
+import { v4 as uuid } from 'uuid'
 import { Analytics } from "aws-amplify"
+import mixpanel from 'mixpanel-browser'
 
 export enum LucasDevEvents {
   PETS_VIEWED = 'pets_viewed',
@@ -27,9 +29,47 @@ export interface EventMetrics {
 // --------------------------
 
 export const recordAnalyticsEvent = (eventName: LucasDevEvents, attributes: EventAttributes, metrics?: EventMetrics) => {
-  return Analytics.record({
-    name: eventName,
-    attributes,
-    metrics,
-  })
+  const awsAmplifyEvent = recordAwsAmplifyEvent(eventName, attributes, metrics)
+  const mixpanelEvent = recordMixpanelEvent(eventName, attributes, metrics)
+
+  return Promise.all([awsAmplifyEvent, mixpanelEvent])
+}
+
+const recordAwsAmplifyEvent = (eventName: LucasDevEvents, attributes: EventAttributes, metrics?: EventMetrics) => Analytics.record({
+  name: eventName,
+  attributes,
+  metrics,
+})
+
+const MIXPANEL_TOKEN = import.meta.env.VITE_MIXPANEL_TOKEN
+const recordMixpanelEvent = (eventName: LucasDevEvents, attributes: EventAttributes, metrics?: EventMetrics) => {
+  const userUniqueId = getUserAnalyticsUniqueId()
+  const now = new Date().valueOf()
+  const mixpanelEventProperties = {
+    distinct_id: userUniqueId,
+    time: now,
+    token: MIXPANEL_TOKEN,
+    ...attributes,
+    ...metrics,
+  }
+
+  return mixpanel.track(eventName, mixpanelEventProperties)
+}
+
+let userAnalyticsUniqueId: string | undefined
+const getUserAnalyticsUniqueId = () => {
+  if (userAnalyticsUniqueId) return userAnalyticsUniqueId
+
+  const localStorageKey = 'lucasdev-uid'
+  const localStorageValue = localStorage.getItem(localStorageKey)
+
+  if (localStorageValue) {
+    userAnalyticsUniqueId = localStorageValue
+    return userAnalyticsUniqueId
+  }
+
+  const newUniqueId = uuid()
+  localStorage.setItem(localStorageKey, newUniqueId)
+  userAnalyticsUniqueId = newUniqueId
+  return userAnalyticsUniqueId
 }
