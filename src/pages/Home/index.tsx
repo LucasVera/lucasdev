@@ -17,7 +17,7 @@ import { LucasDevEvents, recordAnalyticsEvent } from '../../util/analytics'
 
 const App: Component = () => {
   onMount(() => {
-    recordAnalyticsEvent(LucasDevEvents.HOME_VIEWED, { page: 'home' })
+    recordAnalyticsEvent(LucasDevEvents.HOME_VIEWED, { LD_page: 'home' })
   })
 
   const { getLocale } = useLocale()
@@ -49,7 +49,7 @@ const App: Component = () => {
   }, [getLocale()])
 
   const onTrailButtonClicked = () => {
-    recordAnalyticsEvent(LucasDevEvents.TRAIL_BUTTON_CLICKED, { active: !isTrailActive() ? 'true' : 'false' })
+    recordAnalyticsEvent(LucasDevEvents.TRAIL_BUTTON_CLICKED, { LD_active: !isTrailActive() ? 'true' : 'false' })
     setIsTrailActive(!isTrailActive())
   }
 

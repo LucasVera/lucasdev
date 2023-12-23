@@ -43,7 +43,7 @@ export type PetSpecies = 'dog' | 'cat' | 'multiple cats'
 
 const Pets: Component = () => {
   onMount(() => {
-    recordAnalyticsEvent(LucasDevEvents.PETS_VIEWED, { page: 'home' })
+    recordAnalyticsEvent(LucasDevEvents.PETS_VIEWED, { LD_page: 'pets' })
   })
 
   const pets: Pet[] = [

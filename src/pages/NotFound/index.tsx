@@ -4,7 +4,7 @@ import { LucasDevEvents, recordAnalyticsEvent } from "../../util/analytics"
 
 const NotFound: Component = () => {
   onMount(() => {
-    recordAnalyticsEvent(LucasDevEvents.NOT_FOUND_VIEWED, { page: 'home' })
+    recordAnalyticsEvent(LucasDevEvents.NOT_FOUND_VIEWED, { LD_page: 'notfound' })
   })
   return (
     <div>

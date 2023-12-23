@@ -3,9 +3,9 @@ import { Analytics } from "aws-amplify"
 import mixpanel from 'mixpanel-browser'
 
 export enum LucasDevEvents {
-  PETS_VIEWED = 'pets_viewed',
-  HOME_VIEWED = 'home_viewed',
-  NOT_FOUND_VIEWED = 'not_found_viewed',
+  PETS_VIEWED = 'page_view',
+  HOME_VIEWED = 'page_view',
+  NOT_FOUND_VIEWED = 'page_view',
   PET_PICTURE_CLICKED = 'pet_picture_clicked',
   TRAIL_BUTTON_CLICKED = 'trail_button_clicked',
   LANGUAGE_CHANGED = 'language_changed',
@@ -46,8 +46,8 @@ const recordMixpanelEvent = (eventName: LucasDevEvents, attributes: EventAttribu
   const userUniqueId = getUserAnalyticsUniqueId()
   const now = new Date().valueOf()
   const mixpanelEventProperties = {
-    distinct_id: userUniqueId,
-    time: now,
+    User_Unique_Id: userUniqueId,
+    Current_Timestamp: now,
     token: MIXPANEL_TOKEN,
     ...attributes,
     ...metrics,

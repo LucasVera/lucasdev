@@ -18,10 +18,10 @@ const PetCard: Component<PetCardProps> = (props: PetCardProps) => {
       return
     }
     recordAnalyticsEvent(LucasDevEvents.PET_PICTURE_CLICKED, {
-      name: props.pet.name,
-      image: props.pet.image,
-      species: props.pet.species,
-      id: props.pet.id.toString(),
+      LD_name: props.pet.name,
+      LD_image: props.pet.image,
+      LD_species: props.pet.species,
+      LD_pet_picture_id: props.pet.id.toString(),
     })
     props.setClicksDisabled(true)
     setFadeEffect({ transform: 'rotate(180deg) scale(0)', transition: 'transform 0.5s ease-in-out' })

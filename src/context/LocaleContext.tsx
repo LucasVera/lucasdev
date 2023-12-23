@@ -27,7 +27,7 @@ export const LocaleProvider: ParentComponent<LocaleProviderProps> = (props: Loca
     locale: locale.locale,
     getLocale: () => locale.locale,
     setLocale: (locale: string) => {
-      recordAnalyticsEvent(LucasDevEvents.LANGUAGE_CHANGED, { locale })
+      recordAnalyticsEvent(LucasDevEvents.LANGUAGE_CHANGED, { LD_locale: locale })
       setLocale({ locale })
     },
   }
