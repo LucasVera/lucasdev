@@ -10,6 +10,7 @@ import awsConfig from './aws-exports'
 import mixpanel from 'mixpanel-browser'
 
 const MIXPANEL_TOKEN = import.meta.env.VITE_MIXPANEL_TOKEN
+const APP_VERSION = import.meta.env.VITE_APP_VERSION
 
 Amplify.configure({
   ...awsConfig,
@@ -25,6 +26,7 @@ mixpanel.init(MIXPANEL_TOKEN, {
 })
 
 const App: Component = () => {
+  console.log('version', APP_VERSION ?? '0')
   return (
     <div>
       <LocaleProvider>
