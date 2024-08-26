@@ -6,7 +6,8 @@
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "deploy": "echo 'NOPE!! Deploy using CI/CD through github and amplify'"
   },
   "license": "MIT",
   "devDependencies": {
