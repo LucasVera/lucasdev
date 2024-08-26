@@ -9,6 +9,8 @@ import {
   FaSolidCat,
   FaSolidFaceGrinWink,
   FaSolidFaceGrinBeamSweat,
+  FaSolidBlog,
+  FaBrandsHashnode,
 } from 'solid-icons/fa'
 import { A } from '@solidjs/router'
 import { useLocale } from '../../context/LocaleContext'
@@ -59,6 +61,13 @@ const App: Component = () => {
       <div class={styles.containerHeader}>
         <h1 class={styles.title}>{texts().title}</h1>
         <div class={styles.headerButtonsContainer}>
+          <A
+            class={styles.blogBtn}
+            href='https://blog.lucasdev.info'
+            target='_blank'
+          >
+            <FaBrandsHashnode /> Blog
+          </A>
           <button class={styles.trailBtn} onclick={() => onTrailButtonClicked()}>
             {isTrailActive() ? <FaSolidFaceGrinBeamSweat /> : <FaSolidFaceGrinWink />}
           </button>

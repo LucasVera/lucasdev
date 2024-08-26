@@ -26,7 +26,7 @@ import rey2 from '../../assets/images/dog-pics/rey2.png'
 import rey3 from '../../assets/images/dog-pics/rey3.png'
 import rey4 from '../../assets/images/dog-pics/rey4.png'
 import { A } from "@solidjs/router"
-import { FaSolidArrowLeft } from "solid-icons/fa"
+import { FaBrandsHashnode, FaSolidArrowLeft } from "solid-icons/fa"
 import localeTexts from './Pets.texts'
 import { useLocale } from "../../context/LocaleContext"
 import ChangeLocaleBtn from "../../components/ChangeLocaleBtn"
@@ -102,6 +102,13 @@ const Pets: Component = () => {
           <h2 class={styles.subtitle}>{texts().subtitle}</h2>
         </div>
         <div class={styles.headerNavContainer}>
+          <A
+            class={styles.blogBtn}
+            href='https://blog.lucasdev.info'
+            target='_blank'
+          >
+            <FaBrandsHashnode /> Blog
+          </A>
           <ChangeLocaleBtn />
           <A class={styles.backBtn} href="/"><FaSolidArrowLeft /></A>
         </div>

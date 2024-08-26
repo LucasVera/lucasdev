@@ -57,6 +57,12 @@
   transition: 0.3s;
 }
 
+.blogBtn {
+  border: 3px solid #318499;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
 @media (max-width: 512px) {
   .containerHeader {
     margin-bottom: 0;
@@ -64,10 +70,19 @@
   .petsBtn {
     margin: 5px 0;
   }
+  .blogBtn {
+    margin: 5px 0;
+  }
+  .headerButtonsContainer {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 900px) {
   .trailBtn {
     display: none;
+  }
+  .blogBtn {
+    margin-right: 20px;
   }
 }

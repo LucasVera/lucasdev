@@ -37,6 +37,12 @@
   transition: 0.3s;
 }
 
+.blogBtn {
+  border: 3px solid #318499;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
 .petContainer {
   display: flex;
   flex-direction: row;
@@ -55,4 +61,22 @@
   font-size: 18px;
   font-weight: 600;
   margin: 0;
+}
+
+@media (max-width: 740px) {
+  .headerContainer {
+    padding: 1px;
+  }
+  .backBtn {
+    margin: 0;
+  }
+  .blogBtn {
+    margin: 0;
+  }
+  .headerNavContainer {
+    /* flex-direction: column; */
+  }
+  .headerTitleContainer {
+    padding-left: 0;
+  }
 }
